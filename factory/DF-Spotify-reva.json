@@ -1,0 +1,15 @@
+{
+	"name": "DF-Spotify-reva",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c67977f8-6469-43ae-8c18-85cfc3b21a73",
+		"tenantId": "23e8e814-6a58-4823-ae51-07f8800e2c20"
+	}
+}
