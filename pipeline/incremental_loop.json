@@ -43,7 +43,7 @@
 								"source": {
 									"type": "AzureSqlSource",
 									"sqlReaderQuery": {
-										"value": "select * from @{item().schema}.@{item().table} where @{item().cdc_col} > @{if(empty(item().from_date),activity('last_cdc').output.value[0].cdc,item().from_date)}\n\n\n",
+										"value": "select * from @{item().schema}.@{item().table}\nwhere @{item().cdc_col} > '@{if(empty(item().from_date),activity('last_cdc').output.value[0].cdc,item().from_date)}'\n\n\n",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
@@ -122,13 +122,13 @@
 									"parameters": {
 										"container": "bronze",
 										"folder": {
-											"value": "@{item().table}\n",
+											"value": "@{item().table}_cdc",
 											"type": "Expression"
 										},
-										"file": "cdc (1).json"
+										"file": "cdc(1).json"
 									}
 								},
-								"firstRowOnly": false
+								"firstRowOnly": true
 							}
 						},
 						{
@@ -305,7 +305,7 @@
 												{
 													"type": "Query",
 													"text": {
-														"value": "select max(@{item().cdc_col}) as cdc\nfrom @{item().schema}.@{item().table}",
+														"value": "select max(@{item().cdc_col}) as cdc from @{item().schema}.@{item().table}",
 														"type": "Expression"
 													}
 												}
