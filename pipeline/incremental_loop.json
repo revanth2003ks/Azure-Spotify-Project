@@ -17,8 +17,6 @@
 						{
 							"name": "AzuresqltoLake",
 							"type": "Copy",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "last_cdc",
@@ -130,7 +128,7 @@
 										"file": "cdc (1).json"
 									}
 								},
-								"firstRowOnly": true
+								"firstRowOnly": false
 							}
 						},
 						{
@@ -153,8 +151,6 @@
 						{
 							"name": "ifincremental",
 							"type": "IfCondition",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "AzuresqltoLake",
