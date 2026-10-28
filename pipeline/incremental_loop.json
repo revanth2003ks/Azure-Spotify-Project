@@ -122,7 +122,7 @@
 									"parameters": {
 										"container": "bronze",
 										"folder": {
-											"value": "@item().table",
+											"value": "@{item().table}_cdc",
 											"type": "Expression"
 										},
 										"file": "cdc (1).json"
@@ -326,25 +326,25 @@
 				"defaultValue": [
 					{
 						"schema": "dbo",
-						"table": "DimUser_cdc",
+						"table": "DimUser",
 						"cdc_col": "updated_at",
 						"from_date": ""
 					},
 					{
 						"schema": "dbo",
-						"table": "DimTrack_cdc",
+						"table": "DimTrack",
 						"cdc_col": "updated_at",
 						"from_date": ""
 					},
 					{
 						"schema": "dbo",
-						"table": "DimDate_cdc",
+						"table": "DimDate",
 						"cdc_col": "date",
 						"from_date": ""
 					},
 					{
 						"schema": "dbo",
-						"table": "DimArtist_cdc",
+						"table": "DimArtist",
 						"cdc_col": "updated_at",
 						"from_date": ""
 					}
